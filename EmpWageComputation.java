@@ -6,19 +6,25 @@ class Employee{
 	public int get_salary(int attendance)
 	{
 		int WagePrHr=20;
-		int DayPrHr;
+		int DayPrHr=2;
 		this.attendance = attendance;
-		if(this.attendance==0){
+		switch(attendance)
+		{
+		case 0:
 			System.out.println("Full time employee");
-			DayPrHr=8;
-		}
-		else if(this.attendance==1){
+         DayPrHr = 8;
+		break;
+		case 1:
 			System.out.println("Part time employee");
-			DayPrHr=4;
-		}
-		else{
+			DayPrHr = 4;
+		break;
+		case 2:
 			System.out.println("Employee absent");
-			DayPrHr=0;
+			DayPrHr = 0;
+		break;
+		default:
+			System.out.println(" ");
+		break;
 		}
 		salary=WagePrHr*DayPrHr;
 		return salary;
