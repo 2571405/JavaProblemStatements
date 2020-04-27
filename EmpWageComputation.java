@@ -9,11 +9,15 @@ class Employee{
 		int DayPrHr;
 		this.attendance = attendance;
 		if(this.attendance==0){
-			System.out.println("Employee Present");
+			System.out.println("Full time employee");
 			DayPrHr=8;
 		}
+		else if(this.attendance==1){
+			System.out.println("Part time employee");
+			DayPrHr=4;
+		}
 		else{
-			System.out.println("Employee Absent");
+			System.out.println("Employee absent");
 			DayPrHr=0;
 		}
 		salary=WagePrHr*DayPrHr;
@@ -28,7 +32,7 @@ class EmpWageComputation{
       System.out.println("Welcome to Employee Wage Computation Program");
 		Employee person = new Employee();
 		Random rand = new Random();
-		attend = rand.nextInt(2);
+		attend = rand.nextInt(3);
 		DailyWage = person.get_salary(attend);
 		System.out.println("The Daily wage is: "+DailyWage);
    }
