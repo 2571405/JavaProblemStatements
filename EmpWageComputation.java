@@ -1,5 +1,5 @@
 /*
-*Employee Wage Computation Program Use Case 6
+*Employee Wage Computation Program
 *calculate wages till 20 days or 100 working hours reached
 *@author Moutusi Karmakar
 */
