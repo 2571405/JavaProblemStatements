@@ -9,16 +9,16 @@ import java.util.Random;
 *@author Moutusi Karmakar
 */
 class Employee{
-    int salary;
-    int attendance;
-    final int WagePrHr;
-    /*
-    *Constructor Employee
-    *Initializing final variable WagePrHr
-    */
-    Employee(){
-    	WagePrHr=20;
-    }
+int salary;
+int attendance;
+final int WagePrHr;
+/*
+*Constructor Employee
+*Initializing final variable WagePrHr
+*/
+ Employee(){
+    WagePrHr=20;
+ }
     /*
     *Method that returns the daily wage of an Employee based on his attendance
     *@param attendance
