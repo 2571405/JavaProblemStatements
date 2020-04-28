@@ -1,6 +1,6 @@
 /*
-*Employee Wage Computation Program Use Case 6
-*calculate wages till 20 days or 100 working hours reached
+*Employee Wage Computation Program
+*calculate monthly wages till 20 days or 100 working hours reached
 *@author Moutusi Karmakar
 */
 import java.util.Random;
