@@ -1,8 +1,10 @@
-import java.util.Random;
 /*
-*Employee utility class
-*Author Moutusi Karmakar
+*Employee WageComputation Program Use Case 1
+*check attendance of employee
+*@author Moutusi Karmakar
 */
+import java.util.Random;
+/*Employee utility class*/
 class Employee{
     int salary;
     int attendance;
@@ -21,7 +23,6 @@ class Employee{
 /*
 *Employee Wage Computation class
 *Main method class
-*@author Moutusi Karmakar
 */
 class EmpWageComputation{
    /*
