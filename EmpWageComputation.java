@@ -11,13 +11,13 @@ import java.util.Random;
 class Employee{
 int salary;
 int attendance;
-final int WagePrHr;
+static int wagePrHr;
 /*
 *Constructor Employee
-*Initializing final variable WagePrHr
+*Initializing static variable WagePrHr
 */
  Employee(){
-    WagePrHr=20;
+    wagePrHr=20;
  }
     /*
     *Method that returns the daily wage of an Employee based on his attendance
@@ -25,17 +25,17 @@ final int WagePrHr;
     */
     public int getDailyWage(int attendance)
     {
-	int DayPrHr;
+	int dayPrHr;
 	this.attendance = attendance;
 	if(this.attendance==0){
 		System.out.println("Employee Present");
-		DayPrHr=8;
+		dayPrHr=8;
 	}
 	else{
 		System.out.println("Employee Absent");
-		DayPrHr=0;
+		dayPrHr=0;
 	}
-	salary=WagePrHr*DayPrHr;
+	salary=wagePrHr*dayPrHr;
 	return salary;
      }
 }
@@ -51,7 +51,7 @@ class EmpWageComputation{
      */
      public static void main(String []s){
      	int attend;
-     	int DailyWage;
+     	int dailyWage;
      	System.out.println("Welcome to Employee Wage Computation Program");
      	Employee person = new Employee();
      	Random rand = new Random();
@@ -59,7 +59,7 @@ class EmpWageComputation{
      	/*
      	*Storing returned wage from getDailyWage method in DailyWage variable
      	*/
-     	DailyWage = person.getDailyWage(attend);
-     	System.out.println("The Daily wage is: "+DailyWage);
+     	dailyWage = person.getDailyWage(attend);
+     	System.out.println("The Daily wage is: "+dailyWage);
    }
 }
