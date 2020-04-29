@@ -4,7 +4,7 @@
 *@author Moutusi Karmakar
 */
 import java.util.Random;
-/*Employee utility class*/
+/*Employee class*/
 class Employee{
     int salary;
     int attendance;
