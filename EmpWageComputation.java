@@ -4,7 +4,7 @@
 *@author Moutusi Karmakar
 */
 import java.util.Random;
-/*Employee utility class*/
+/*Employee class*/
 class Employee{
 int salary;
 int attendance;
@@ -102,7 +102,7 @@ class EmpWageComputation{
 	 //calculating monthly wage of employee according to type of employee
          while (loop_end==0){
 	    /*
-	    *Storing salary and total working hours returned from getMonthlyWage method in salary_and_hours array
+	    *Storing salary and total working hours returned from getMonthlyWage method in salaryAndHours array
 	    */
             salaryAndHours = person.getMonthlyWage(workHrs,totalDays,empType);
 	    // Loop till 20 days are over or 100 working hours completed
