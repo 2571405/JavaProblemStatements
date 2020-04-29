@@ -5,8 +5,7 @@
 */
 import java.util.Random;
 /*
-*Employee utility class
-*@author Moutusi Karmakar
+*Employee class
 */
 class Employee{
 int salary;
@@ -57,7 +56,7 @@ class EmpWageComputation{
      	Random rand = new Random();
      	attend = rand.nextInt(2);
      	/*
-     	*Storing returned wage from getDailyWage method in DailyWage variable
+     	*Storing returned wage from getDailyWage method in dailyWage variable
      	*/
      	dailyWage = person.getDailyWage(attend);
      	System.out.println("The Daily wage is: "+dailyWage);
