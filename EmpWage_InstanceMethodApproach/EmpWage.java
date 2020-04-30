@@ -89,7 +89,7 @@ public EmpWage(String compName, int numOfDays, int empRate, int maxHrs){
      *@param s
      */
       public static void main(String []s){
-	  EmpWage bridgelabz = new EmpWage("BridgeLabz",30,20,100);
+	  EmpWage bridgelabz = new EmpWage("BridgeLabz",20,20,100);
 	  EmpWage dMart = new EmpWage("DMart",25,15,150);
 	  EmpWage bBasket = new EmpWage("Big Basket",20,25,100);
           /*Calculating monthly wage for an employee of BridgeLabz*/
