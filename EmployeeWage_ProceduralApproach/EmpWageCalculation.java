@@ -26,6 +26,8 @@ private static final int IS_FULL_TIME = 1;
 		int monthlyWage = 0;
 		//variable daysPresent keeps count of the no of days present for a month
 		int daysPresent = 0;
+		//variable hoursWorked keeps count of the no of hours worked in a month
+		int hoursWorked = 0;
 		Random rand = new Random();
 		empType = rand.nextInt(2);
 		switch(empType){
@@ -41,36 +43,44 @@ private static final int IS_FULL_TIME = 1;
 			System.out.println(" ");
 		break;
 		}
-		while(true){
-			empAttendance = rand.nextInt(2);
-			if(empAttendance == 0){
-				daysPresent += 1;
-				System.out.println("Day "+totalWorkingDays+": Present");
-				monthlyWage += empRate * empHrs;
-				totalWorkingHours += empHrs;
-			}
-			else{
-				System.out.println("Day "+totalWorkingDays+": Absent");
-				monthlyWage += 0;
-				totalWorkingHours += 0;
-			}
-			if(totalWorkingDays == numOfDays || !(totalWorkingHours <= maxHrs)){
-				break;
-			}
+		 while(true){
+         empAttendance = rand.nextInt(2);
+         if(empAttendance == 0){
+            daysPresent += 1;
+            System.out.println("Day "+totalWorkingDays+": Present");
+            monthlyWage += empRate * empHrs;
+            hoursWorked += empHrs;
+         }
+         else{
+            System.out.println("Day "+totalWorkingDays+": Absent");
+            monthlyWage += 0;
+            hoursWorked += 0;
+         }
+         if(totalWorkingDays == numOfDays || !(totalWorkingHours <= maxHrs)){
+            if(totalWorkingDays == numOfDays){
+                   System.out.println(numOfDays+" days are over!");
+              break;
+            }
+            else{
+            System.out.println(maxHrs+" hours reached!");
+            break;
+            }
+         }
          totalWorkingDays++;
-		}
-		System.out.println("Company: "+compName+"\nNo of days worked out of "+numOfDays+" days: "+daysPresent+"\nSalary for the month: "+monthlyWage+"\nNo of hours worked out of "+maxHrs+" hours: "+totalWorkingHours);
-	}
-	/*
-	*Main method
-	*@param s
-	*/
-	public static void main(String []s){
-		/*Calculating monthly wage for an employee of BridgeLabz*/
-		calculateEmpWage("BridgeLabz",30,20,100);
-		/*Calculating monthly wage for an employee of DMart*/
-		calculateEmpWage("DMart",25,15,150);
-		/*Calculating monthly wage for an employee of Big Basket*/
-		calculateEmpWage("Big Basket",20,25,100);
-	}
+    totalWorkingHours += empHrs;
+      }
+      System.out.println("Company: "+compName+"\nNo of days worked out of "+numOfDays+" days: "+daysPresent+"\nNo of hours worked out of "+maxHrs+" hours: "+hoursWorked+"\nSalary for the month: "+monthlyWage);
+   }
+   /*
+   *Main method
+   *@param s
+   */
+   public static void main(String []s){
+      /*Calculating monthly wage for an employee of BridgeLabz*/
+      calculateEmpWage("BridgeLabz",30,20,100);
+      /*Calculating monthly wage for an employee of DMart*/
+      calculateEmpWage("DMart",25,15,150);
+      /*Calculating monthly wage for an employee of Big Basket*/
+      calculateEmpWage("Big Basket",20,25,100);
+   }
 }
