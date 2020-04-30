@@ -9,6 +9,7 @@ class Employee{
 int salary;
 int attendance;
 int hoursWorked;
+int daysPresent;
 static int wagePrHr;
 /*
 *Constructor Employee
@@ -42,9 +43,10 @@ Employee(){
        	 int status;
 	 Random rand = new Random();
 	 status = rand.nextInt(2);
-	 int[] salaryAndHours = new int[2];
+	 int[] salaryAndHours = new int[3];
 	 if(status==0){
 	    System.out.println("Day "+day+": Present");
+	    daysPresent += 1;
 	    salary+=wagePrHr*hours;
 	    if(type==0)
 	       hoursWorked+=8;
@@ -52,14 +54,17 @@ Employee(){
 	       hoursWorked+=4;
             salaryAndHours[0] = salary;
 	    salaryAndHours[1] = hoursWorked;
+	    salaryAndHours[2] = daysPresent;
 	    return salaryAndHours;
 	 }
 	 else{
 	    System.out.println("Day "+day+": Absent");
+	    daysPresent += 0;
 	    salary+=0;
             hoursWorked+=0;
 	    salaryAndHours[0] = salary;
             salaryAndHours[1] = hoursWorked;
+	    salaryAndHours[2] = daysPresent;
             return salaryAndHours;
 	 }
       }
@@ -89,7 +94,8 @@ class EmpWageComputation{
 	 // Totaldays variable counts days till 20 starting from day 1
 	 int totalDays=1;
 	 int loop_end=0;
-	 int [] salaryAndHours = new int[2];
+	 int totalWorkingHours = 0;
+	 int [] salaryAndHours = new int[3];
          System.out.println("Welcome to Employee Wage Computation Program");
 	 Employee person = new Employee();
 	 Random rand = new Random();
@@ -106,19 +112,21 @@ class EmpWageComputation{
 	    */
             salaryAndHours = person.getMonthlyWage(workHrs,totalDays,empType);
 	    // Loop till 20 days are over or 100 working hours completed
-            if(totalDays==20 || salaryAndHours[1]==100){
+            if(totalDays==20 || !(totalWorkingHours < 100)){
 		if(totalDays==20){
 		   System.out.println("20 days over!");
 		   break;
 		}
 		else{
-		   System.out.println("100 working hours completed!");
+		   System.out.println("100 working hours reached!");
 		   break;
 		}
 	    }
 	 totalDays+=1;
+	 totalWorkingHours += workHrs;
          }
-	 System.out.println("Total hours worked: "+salaryAndHours[1]);
-         System.out.println("The monthly wage is: "+ salaryAndHours[0]);
+	 System.out.println("Total days worked out of 20  days: "+salaryAndHours[2]);
+	 System.out.println("Total hours worked out of 100 hours: "+salaryAndHours[1]);
+         System.out.println("Wage for the month is: "+ salaryAndHours[0]);
       }
 }
