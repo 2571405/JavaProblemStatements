@@ -26,7 +26,7 @@ public EmployeeWage(String compName, int numOfDays, int empRate, int maxHrs){
       *@param s
       */
       public static void main(String []s){
-	  EmployeeWage bridgelabz = new EmployeeWage("DMart",20,20,100);
+	  final EmployeeWage bridgelabz = new EmployeeWage("DMart",20,20,100);
 	  int totalWorkingDays = 1;
           int totalWorkingHours = 0;
           //variable empType tells the type of employee i.e., part time/full time
