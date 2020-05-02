@@ -89,9 +89,9 @@ public EmpWage(String compName, int numOfDays, int empRate, int maxHrs){
      *@param s
      */
       public static void main(String []s){
-	  EmpWage bridgelabz = new EmpWage("BridgeLabz",20,20,100);
-	  EmpWage dMart = new EmpWage("DMart",25,15,150);
-	  EmpWage bBasket = new EmpWage("Big Basket",20,25,100);
+	  final EmpWage bridgelabz = new EmpWage("BridgeLabz",20,20,100);
+	  final EmpWage dMart = new EmpWage("DMart",25,15,150);
+	  final EmpWage bBasket = new EmpWage("Big Basket",20,25,100);
           /*Calculating monthly wage for an employee of BridgeLabz*/
           bridgelabz.calculateEmpWage();
           /*Calculating monthly wage for an employee of DMart*/
